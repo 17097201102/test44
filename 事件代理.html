@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport: 页面的视口---显示的范围 -->
+  <!-- width=device-width : 当前页面宽度等于设备宽高 -->
+  <!-- initial-scale=1.0  : 初始缩放比例为:1 -->
+  <!-- maximum-scale=1.0  : 最大缩放比例为:1 -->
+  <!-- minimum-scale=1.0  : 最小缩放比例为:1 -->
+  <!-- user-scalable=no   : 用户的缩放功能---禁止 -->
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>事件代理</title>
+  <style>
+    LI {
+      COLOR: YELLOW;
+    }
+  </style>
+</head>
+
+<body>
+<div id="box">
+  <p>
+    <span id="p2">111</span>
+  </p>
+  <div id="btn2">2222</div>
+</div>
+<ul>
+  <LI>1</LI>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+</ul>
+<script src="jquery-1.12.4.js"></script>
+<script>
+  $('ul').delegate('li', 'click', function () {
+    $(this).css({ "color": 'red' })
+  })
+  $('#box').delegate('#p2,#btn2', 'click', function () {
+    $(this).css({ "color": 'red' })
+  })
+</script>
+</body>
+
+</html>
